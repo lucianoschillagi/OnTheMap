@@ -1,0 +1,210 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<document type="com.apple.InterfaceBuilder3.CocoaTouch.Storyboard.XIB" version="3.0" toolsVersion="13196" targetRuntime="iOS.CocoaTouch" propertyAccessControl="none" useAutolayout="YES" useTraitCollections="YES" colorMatched="YES" initialViewController="UOA-BS-eDK">
+    <device id="retina4_7" orientation="portrait">
+        <adaptation id="fullscreen"/>
+    </device>
+    <dependencies>
+        <deployment identifier="iOS"/>
+        <plugIn identifier="com.apple.InterfaceBuilder.IBCocoaTouchPlugin" version="13173"/>
+        <capability name="documents saved in the Xcode 8 format" minToolsVersion="8.0"/>
+    </dependencies>
+    <customFonts key="customFonts">
+        <array key="HelveticaNeue.ttc">
+            <string>HelveticaNeue</string>
+        </array>
+        <array key="Roboto-Regular.ttf">
+            <string>Roboto-Regular</string>
+        </array>
+    </customFonts>
+    <scenes>
+        <!--Student Information View Controller-->
+        <scene sceneID="qgF-PB-Ftu">
+            <objects>
+                <viewController storyboardIdentifier="add location" title="Student Information View Controller" id="EQ3-VQ-bIr" customClass="StudentInformationViewController" customModule="OnTheMap" customModuleProvider="target" sceneMemberID="viewController">
+                    <layoutGuides>
+                        <viewControllerLayoutGuide type="top" id="HiU-o0-ooT"/>
+                        <viewControllerLayoutGuide type="bottom" id="vhT-eO-hJ3"/>
+                    </layoutGuides>
+                    <view key="view" contentMode="scaleToFill" id="rjz-Cz-VLE">
+                        <rect key="frame" x="0.0" y="0.0" width="375" height="667"/>
+                        <autoresizingMask key="autoresizingMask" widthSizable="YES" heightSizable="YES"/>
+                        <subviews>
+                            <textField opaque="NO" clipsSubviews="YES" contentMode="scaleToFill" fixedFrame="YES" contentHorizontalAlignment="left" contentVerticalAlignment="center" borderStyle="roundedRect" placeholder="Enter a Website" textAlignment="natural" minimumFontSize="17" clearButtonMode="whileEditing" translatesAutoresizingMaskIntoConstraints="NO" id="Zcn-Gm-llq">
+                                <rect key="frame" x="36" y="307" width="297" height="30"/>
+                                <autoresizingMask key="autoresizingMask" flexibleMaxX="YES" flexibleMaxY="YES"/>
+                                <nil key="textColor"/>
+                                <fontDescription key="fontDescription" name="Roboto-Regular" family="Roboto" pointSize="17"/>
+                                <textInputTraits key="textInputTraits" autocorrectionType="no" keyboardType="URL"/>
+                                <connections>
+                                    <outlet property="delegate" destination="EQ3-VQ-bIr" id="qAL-LC-rR1"/>
+                                </connections>
+                            </textField>
+                            <imageView userInteractionEnabled="NO" contentMode="scaleAspectFit" horizontalHuggingPriority="251" verticalHuggingPriority="251" fixedFrame="YES" image="icon_world" translatesAutoresizingMaskIntoConstraints="NO" id="fi2-6H-XdO">
+                                <rect key="frame" x="132" y="121" width="111" height="95"/>
+                                <autoresizingMask key="autoresizingMask" flexibleMaxX="YES" flexibleMaxY="YES"/>
+                            </imageView>
+                            <textField opaque="NO" clipsSubviews="YES" contentMode="scaleToFill" fixedFrame="YES" contentHorizontalAlignment="left" contentVerticalAlignment="center" borderStyle="roundedRect" placeholder="Enter a Location" textAlignment="natural" minimumFontSize="17" clearButtonMode="whileEditing" translatesAutoresizingMaskIntoConstraints="NO" id="xJK-ys-yH1">
+                                <rect key="frame" x="36" y="259" width="297" height="30"/>
+                                <autoresizingMask key="autoresizingMask" flexibleMaxX="YES" flexibleMaxY="YES"/>
+                                <nil key="textColor"/>
+                                <fontDescription key="fontDescription" name="Roboto-Regular" family="Roboto" pointSize="17"/>
+                                <textInputTraits key="textInputTraits" autocorrectionType="no"/>
+                                <connections>
+                                    <outlet property="delegate" destination="EQ3-VQ-bIr" id="rUM-6R-yUe"/>
+                                </connections>
+                            </textField>
+                            <button opaque="NO" contentMode="scaleToFill" fixedFrame="YES" contentHorizontalAlignment="center" contentVerticalAlignment="center" buttonType="roundedRect" lineBreakMode="middleTruncation" translatesAutoresizingMaskIntoConstraints="NO" id="9et-kd-jqw">
+                                <rect key="frame" x="36" y="406" width="297" height="30"/>
+                                <autoresizingMask key="autoresizingMask" flexibleMaxX="YES" flexibleMaxY="YES"/>
+                                <color key="backgroundColor" red="0.0078431372550000003" green="0.70196078429999997" blue="0.89411764709999997" alpha="1" colorSpace="calibratedRGB"/>
+                                <fontDescription key="fontDescription" name="Roboto-Regular" family="Roboto" pointSize="17"/>
+                                <state key="normal" title="FIND LOCATION">
+                                    <color key="titleColor" white="1" alpha="1" colorSpace="calibratedWhite"/>
+                                </state>
+                                <connections>
+                                    <action selector="findStudentCurrentLocation:" destination="EQ3-VQ-bIr" eventType="touchUpInside" id="zcf-mD-3kW"/>
+                                </connections>
+                            </button>
+                            <activityIndicatorView opaque="NO" contentMode="scaleToFill" horizontalHuggingPriority="750" verticalHuggingPriority="750" fixedFrame="YES" style="gray" translatesAutoresizingMaskIntoConstraints="NO" id="hiX-xh-gUP">
+                                <rect key="frame" x="174" y="287" width="20" height="20"/>
+                                <autoresizingMask key="autoresizingMask" flexibleMaxX="YES" flexibleMaxY="YES"/>
+                            </activityIndicatorView>
+                        </subviews>
+                        <color key="backgroundColor" white="1" alpha="1" colorSpace="calibratedWhite"/>
+                        <gestureRecognizers/>
+                        <connections>
+                            <outletCollection property="gestureRecognizers" destination="iVA-Kc-fRa" appends="YES" id="2cM-SP-vCK"/>
+                        </connections>
+                    </view>
+                    <navigationItem key="navigationItem" title="Add Location" id="eeB-3j-Ec5">
+                        <barButtonItem key="leftBarButtonItem" systemItem="cancel" id="TTx-qg-guS">
+                            <variation key="heightClass=compact-widthClass=compact">
+                                <nil key="tintColor"/>
+                            </variation>
+                            <connections>
+                                <action selector="cancel:" destination="EQ3-VQ-bIr" id="PhZ-i4-aJs"/>
+                            </connections>
+                        </barButtonItem>
+                    </navigationItem>
+                    <connections>
+                        <outlet property="activityIndicator" destination="hiX-xh-gUP" id="YMC-Hk-ErG"/>
+                        <outlet property="cancelButton" destination="TTx-qg-guS" id="DdN-19-oYg"/>
+                        <outlet property="enterLocationTextField" destination="xJK-ys-yH1" id="wrX-Gc-OGg"/>
+                        <outlet property="enterWebsiteTextField" destination="Zcn-Gm-llq" id="BNy-up-uUu"/>
+                        <outlet property="findLocationButton" destination="9et-kd-jqw" id="Kkv-Of-KrK"/>
+                        <outlet property="iconRelocation" destination="fi2-6H-XdO" id="kWb-fE-W5a"/>
+                    </connections>
+                </viewController>
+                <placeholder placeholderIdentifier="IBFirstResponder" id="BLB-EF-Yvq" userLabel="First Responder" sceneMemberID="firstResponder"/>
+                <tapGestureRecognizer id="iVA-Kc-fRa">
+                    <connections>
+                        <action selector="userDidTapView:" destination="EQ3-VQ-bIr" id="9mi-2R-Lrh"/>
+                    </connections>
+                </tapGestureRecognizer>
+            </objects>
+            <point key="canvasLocation" x="1140" y="5.8470764617691158"/>
+        </scene>
+        <!--Post Information View Controller-->
+        <scene sceneID="xnN-VF-3wY">
+            <objects>
+                <navigationController storyboardIdentifier="Post Information View Controller" title="Post Information View Controller" id="2hI-8P-pGK" sceneMemberID="viewController">
+                    <navigationBar key="navigationBar" contentMode="scaleToFill" id="saU-eO-ZQM">
+                        <rect key="frame" x="0.0" y="20" width="375" height="44"/>
+                        <autoresizingMask key="autoresizingMask"/>
+                    </navigationBar>
+                    <connections>
+                        <segue destination="bzZ-Zp-ytp" kind="relationship" relationship="rootViewController" id="9ds-lk-r1g"/>
+                    </connections>
+                </navigationController>
+                <placeholder placeholderIdentifier="IBFirstResponder" id="ZTH-Gk-lQr" userLabel="First Responder" sceneMemberID="firstResponder"/>
+            </objects>
+            <point key="canvasLocation" x="1906" y="6"/>
+        </scene>
+        <!--New Location-->
+        <scene sceneID="NfQ-sp-h4o">
+            <objects>
+                <viewController id="bzZ-Zp-ytp" customClass="PostInformationViewController" customModule="OnTheMap" sceneMemberID="viewController">
+                    <layoutGuides>
+                        <viewControllerLayoutGuide type="top" id="PiB-iG-TJy"/>
+                        <viewControllerLayoutGuide type="bottom" id="ugC-sU-6Ld"/>
+                    </layoutGuides>
+                    <view key="view" contentMode="scaleToFill" id="C7B-dP-nCq">
+                        <rect key="frame" x="0.0" y="0.0" width="375" height="667"/>
+                        <autoresizingMask key="autoresizingMask" widthSizable="YES" heightSizable="YES"/>
+                        <subviews>
+                            <button opaque="NO" contentMode="scaleToFill" fixedFrame="YES" contentHorizontalAlignment="center" contentVerticalAlignment="center" buttonType="roundedRect" lineBreakMode="middleTruncation" translatesAutoresizingMaskIntoConstraints="NO" id="Suo-6p-Del" userLabel="Submit Button">
+                                <rect key="frame" x="59" y="575" width="264" height="30"/>
+                                <autoresizingMask key="autoresizingMask" flexibleMaxX="YES" flexibleMaxY="YES"/>
+                                <color key="backgroundColor" red="0.0078431372550000003" green="0.70196078429999997" blue="0.89411764709999997" alpha="1" colorSpace="calibratedRGB"/>
+                                <fontDescription key="fontDescription" name="HelveticaNeue" family="Helvetica Neue" pointSize="17"/>
+                                <state key="normal" title="SUBMIT">
+                                    <color key="titleColor" white="1" alpha="1" colorSpace="calibratedWhite"/>
+                                </state>
+                                <connections>
+                                    <action selector="submitStudenInformation:" destination="bzZ-Zp-ytp" eventType="touchUpInside" id="FWU-6r-xpj"/>
+                                </connections>
+                            </button>
+                            <mapView clipsSubviews="YES" multipleTouchEnabled="YES" contentMode="scaleToFill" fixedFrame="YES" mapType="standard" translatesAutoresizingMaskIntoConstraints="NO" id="jpk-74-e0o" userLabel="Student Location Map">
+                                <rect key="frame" x="0.0" y="64" width="375" height="603"/>
+                                <autoresizingMask key="autoresizingMask" flexibleMaxX="YES" flexibleMaxY="YES"/>
+                                <connections>
+                                    <outlet property="delegate" destination="bzZ-Zp-ytp" id="73m-rh-Hcy"/>
+                                </connections>
+                            </mapView>
+                            <activityIndicatorView hidden="YES" opaque="NO" contentMode="scaleToFill" horizontalHuggingPriority="750" verticalHuggingPriority="750" fixedFrame="YES" hidesWhenStopped="YES" style="gray" translatesAutoresizingMaskIntoConstraints="NO" id="s8n-da-idQ">
+                                <rect key="frame" x="177" y="323" width="20" height="20"/>
+                                <autoresizingMask key="autoresizingMask" flexibleMaxX="YES" flexibleMaxY="YES"/>
+                            </activityIndicatorView>
+                        </subviews>
+                        <color key="backgroundColor" white="1" alpha="1" colorSpace="calibratedWhite"/>
+                    </view>
+                    <navigationItem key="navigationItem" title="New Location" id="LON-ud-AUD">
+                        <barButtonItem key="leftBarButtonItem" image="icon_back-arrow" id="BMq-hw-XSg">
+                            <connections>
+                                <action selector="cancelInformationPosting:" destination="bzZ-Zp-ytp" id="yfk-8f-7qN"/>
+                            </connections>
+                        </barButtonItem>
+                    </navigationItem>
+                    <connections>
+                        <outlet property="activityIndicator" destination="s8n-da-idQ" id="9eG-Yc-8fi"/>
+                        <outlet property="studentLocationMap" destination="jpk-74-e0o" id="MzX-6W-Mpx"/>
+                        <outlet property="submitButton" destination="Suo-6p-Del" id="qCG-V6-oBT"/>
+                        <segue destination="2xh-dJ-xXn" kind="show" identifier="to SLTabbedView" id="OUg-6U-8uz"/>
+                    </connections>
+                </viewController>
+                <placeholder placeholderIdentifier="IBFirstResponder" id="GvQ-dC-LhE" userLabel="First Responder" sceneMemberID="firstResponder"/>
+            </objects>
+            <point key="canvasLocation" x="2727" y="6"/>
+        </scene>
+        <!--SLTabbedView-->
+        <scene sceneID="udd-9h-bMw">
+            <objects>
+                <viewControllerPlaceholder storyboardIdentifier="SLTabbedView" storyboardName="SLTabbedView" id="2xh-dJ-xXn" sceneMemberID="viewController"/>
+                <placeholder placeholderIdentifier="IBFirstResponder" id="yp2-dh-DAN" userLabel="First Responder" sceneMemberID="firstResponder"/>
+            </objects>
+            <point key="canvasLocation" x="3575" y="-185"/>
+        </scene>
+        <!--add location navigation controller-->
+        <scene sceneID="Dfg-t0-N9o">
+            <objects>
+                <navigationController title="add location navigation controller" automaticallyAdjustsScrollViewInsets="NO" id="UOA-BS-eDK" sceneMemberID="viewController">
+                    <toolbarItems/>
+                    <navigationBar key="navigationBar" contentMode="scaleToFill" id="gOK-GF-F8g">
+                        <rect key="frame" x="0.0" y="20" width="375" height="44"/>
+                        <autoresizingMask key="autoresizingMask"/>
+                    </navigationBar>
+                    <nil name="viewControllers"/>
+                    <connections>
+                        <segue destination="EQ3-VQ-bIr" kind="relationship" relationship="rootViewController" id="1ts-Ax-EO4"/>
+                    </connections>
+                </navigationController>
+                <placeholder placeholderIdentifier="IBFirstResponder" id="vnO-5S-83l" userLabel="First Responder" sceneMemberID="firstResponder"/>
+            </objects>
+            <point key="canvasLocation" x="200.80000000000001" y="5.8470764617691158"/>
+        </scene>
+    </scenes>
+    <resources>
+        <image name="icon_back-arrow" width="24" height="24"/>
+        <image name="icon_world" width="52" height="67"/>
+    </resources>
+</document>
